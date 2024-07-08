@@ -12,3 +12,4 @@
 - 🔴 Validation library with Zod
 - 🔄 Asynchronous State Management with React Query
 - 📦 Type-safe ORM with DrizzleORM, compatible with PostgreSQL, SQLite, and MySQL
+- 🔌 Seamless integration of Supabase with DrizzleORM for enhanced database management
