@@ -140,6 +140,23 @@ export default function DoubleLayerSlimmingThaiAndHeapBellyShaper() {
           </li>
         </ul>
       </section>
+
+      {/* section: importent thing */}
+      <section className="shadow-lg mb-8 md:max-w-5xl max-w-xl mx-auto">
+        <h2 className="text-blue-700 text-3xl text-center font-semibold">
+          ২ টি গুরুত্বপূর্ন বিষয়
+        </h2>
+        <ul className="text-xl py-6 px-4 flex flex-col gap-y-4">
+          <li>
+            ১। আমরা কোনো অগ্রিম টাকা নেই না। ইনশাল্লাহ সবাই ক্যাশ অন ডেলিভারিতে
+            পন্য রিসিভ করবেন।
+          </li>
+          <li>
+            ২। অর্ডার করার পরে আমাদের কল সেন্টার থেকে ফোন করে পন্যের কালার ও
+            সাইজ কনফার্ম করা হবে।
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
