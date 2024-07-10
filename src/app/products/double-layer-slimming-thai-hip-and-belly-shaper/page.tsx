@@ -97,6 +97,49 @@ export default function DoubleLayerSlimmingThaiAndHeapBellyShaper() {
           </ul>
         </div>
       </section>
+
+      {/* section: why buy from us */}
+      <section className="md:max-w-5xl max-w-xl mx-auto mb-8">
+        <h2 className=" text-3xl text-center bg-blue-500 text-white font-bold p-4">
+          আমাদের কাছ থেকে কেন কিনবেন?
+        </h2>
+
+        <ul className="text-xl px-4 pt-6 flex flex-col gap-y-4">
+          <li className="flex gap-x-4">
+            <li>
+              <CheckCircleIcon className="h-10 w-10 text-blue-700" />
+            </li>
+            <li className="mt-1">১০০% অরিজিনাল পন্য</li>
+          </li>
+          <li className="flex gap-x-4">
+            <li>
+              <CheckCircleIcon className="h-10 w-10 text-blue-700" />
+            </li>
+            <li className="mt-1">কোন অগ্রিম টাকা ছাড়া পন্য অর্ডার করুন</li>
+          </li>
+          <li className="flex gap-x-4">
+            <li>
+              <CheckCircleIcon className="h-10 w-10 text-blue-700" />
+            </li>
+            <li className="mt-1">পন্য রিসিভ করে মূল্য পরিশোধ করুন</li>
+          </li>
+          <li className="flex gap-x-4">
+            <li>
+              <CheckCircleIcon className="h-10 w-10 text-blue-700" />
+            </li>
+            <li className="mt-1">
+              কালার বা সাইজ জনিত যেকোন সমস্যায় সহজে রিটার্ন বা এক্সচেঞ্জ করার
+              সুবিধা
+            </li>
+          </li>
+          <li className="flex gap-x-4">
+            <li>
+              <CheckCircleIcon className="h-10 w-10 text-blue-700" />
+            </li>
+            <li className="mt-1">সঠিক সময়ে পন্য ডেলিভারির নিশ্চয়তা</li>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
