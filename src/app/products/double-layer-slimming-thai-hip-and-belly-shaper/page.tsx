@@ -19,6 +19,18 @@ export default function DoubleLayerSlimmingThaiAndHeapBellyShaper() {
           </div>
         </div>
       </section>
+
+      {/* section: youtube embeded video */}
+      <section className="mb-12 md:max-w-5xl max-w-xl mx-auto">
+        <div className="">
+          <iframe
+            className="w-full h-[500px]"
+            src="https://www.youtube.com/embed/vuLeDvHmlHg"
+            title="💥ডাবল লেয়ার স্লিমিং থাই, হিপ ও বেলী শেপার💥"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          />
+        </div>
+      </section>
     </div>
   );
 }
