@@ -1,9 +1,10 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import "dotenv/config";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
 
-const connectionString = process.env.DB_CONNECTION_STRING as string;
+const client = createClient({
+  url: process.env.TURSO_CONNECTION_URL!,
+  authToken: process.env.TURSO_AUTH_TOKEN,
+});
 
-const client = postgres(connectionString, { prepare: false });
-const db = drizzle(client);
-
-export default db;
+export const db = drizzle(client);

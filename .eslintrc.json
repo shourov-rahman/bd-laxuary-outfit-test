@@ -1,8 +1,5 @@
 {
-  "ignorePatterns": [
-    "next.config.js",
-    "next.config.mjs"
-  ],
+  "ignorePatterns": ["next.config.js", "next.config.mjs"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@tanstack/eslint-plugin-query/recommended",
@@ -20,36 +17,19 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "react",
-    "@tanstack/query",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "@tanstack/query", "@typescript-eslint", "prettier"],
   "rules": {
-    "no-console": [
-      "off"
-    ],
-    "react/jsx-uses-react": [
-      "off"
-    ],
-    "react/react-in-jsx-scope": [
-      "off"
-    ],
-    "react/jsx-props-no-spreading": [
-      "warn"
-    ],
+    "no-console": ["off"],
+    "react/jsx-uses-react": ["off"],
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-props-no-spreading": ["warn"],
+
+    "import/prefer-default-export": "off",
     "react/function-component-definition": [
       2,
       {
-        "namedComponents": [
-          "function-declaration",
-          "arrow-function"
-        ],
-        "unnamedComponents": [
-          "function-expression",
-          "arrow-function"
-        ]
+        "namedComponents": ["function-declaration", "arrow-function"],
+        "unnamedComponents": ["function-expression", "arrow-function"]
       }
     ],
     "no-shadow": "off",
@@ -58,10 +38,7 @@
       "error",
       {
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         }
       }
     ],
@@ -69,10 +46,7 @@
       "error",
       {
         "required": {
-          "some": [
-            "nesting",
-            "id"
-          ]
+          "some": ["nesting", "id"]
         }
       }
     ]
