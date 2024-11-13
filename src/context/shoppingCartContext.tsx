@@ -29,7 +29,7 @@ export const ShoppingCartContextProvider = ({
   children,
 }: TShoppingCartContextProvider) => {
   const [shippingCost, setShippingCost] = useState(0);
-  const [productPrice, setProductPrice] = useState(680);
+  const [productPrice, setProductPrice] = useState(630);
   const [productQuantity, setProductQuantity] = useState(1);
 
   const total = productPrice + shippingCost;

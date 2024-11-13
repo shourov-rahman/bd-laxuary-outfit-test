@@ -37,7 +37,22 @@ export const productImages = sqliteTable(
   },
 );
 
+export const orders = sqliteTable("orders", {
+  orderId: integer("order_id").primaryKey({ autoIncrement: true }),
+  product_name: text("product_name").notNull(),
+  customer_name: text("customer_name").notNull(),
+  customer_mobile: text("customer_mobile").notNull(),
+  customer_address: text("customer_address").notNull(),
+  product_color: text("product_color"),
+  product_weight_and_height: text("product_weight_and_height"),
+  product_quantity: integer("product_quantity").notNull(),
+  product_shipping: real("product_shipping").notNull(),
+  total: real("total").notNull(),
+});
+
 export type InsertProduct = typeof products.$inferInsert;
 export type SelectProduct = typeof products.$inferSelect;
 export type InsertProductImage = typeof productImages.$inferInsert;
 export type SelectProductImage = typeof productImages.$inferSelect;
+export type Insertorder = typeof orders.$inferInsert;
+export type SelectOrder = typeof orders.$inferSelect;

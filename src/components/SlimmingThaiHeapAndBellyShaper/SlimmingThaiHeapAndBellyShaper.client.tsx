@@ -1,22 +1,23 @@
 "use client";
 
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
-import { TProductWithImages } from "@/types/types";
+import { TSingleProductWithImage } from "@/types/types";
 import ProductSelection from "./ProductSelection.client";
+import OrderDetails from "./OrderDetails.client";
 
 type Props = {
-  products: TProductWithImages[];
+  products: TSingleProductWithImage;
 };
 
 export default function SlimmingThaiHeapAndBellyShaper({ products }: Props) {
   return (
-    <div>
+    <section>
       {/* section: hero */}
       <section className="mb-6 sm:mb-8">
         <div className="bg-gradient-to-r from-blue-700 to-[#B06AB3] font-sans px-6 py-12">
           <div className="container mx-auto flex flex-col justify-center items-center text-center">
             <h1 className="text-white sm:text-4xl text-3xl font-bold mb-4">
-              স্লিমিং থাই, হিপ ও বেলী শেপার ১ পিস ৬৮০/- টাকা, ২ পিস ১১৮০ টাকা
+              স্লিমিং থাই, হিপ ও বেলী শেপার ১ পিস ৬৩০ টাকা, ২ পিস ১১৬০ টাকা
               মাত্র
             </h1>
 
@@ -167,6 +168,9 @@ export default function SlimmingThaiHeapAndBellyShaper({ products }: Props) {
       <section>
         <ProductSelection products={products} />
       </section>
-    </div>
+      <section>
+        <OrderDetails products={products} />
+      </section>
+    </section>
   );
 }
