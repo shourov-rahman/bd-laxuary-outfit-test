@@ -1,0 +1,43 @@
+services:
+  web:
+    build:
+      context: .
+      target: runner
+    container_name: bd-laxuary-outfit
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    networks:
+      - app-network
+
+  dev:
+    build:
+      context: .
+      target: base
+    container_name: bd-laxuary-outfit-dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "${DEV_PORT:-3001}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    command: npm run dev
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
