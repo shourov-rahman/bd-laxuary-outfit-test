@@ -6,7 +6,7 @@ services:
     container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
-      - "${PROD_EXTERNAL_PORT:-3001}:${INTERNAL_PORT:-3000}"
+      - "${PROD_EXTERNAL_PORT:-3000}:${INTERNAL_PORT:-3000}"
     env_file:
       - .env
     environment:
