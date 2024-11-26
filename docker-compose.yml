@@ -3,7 +3,6 @@ services:
     build:
       context: .
       target: runner
-    container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
       - "${PROD_EXTERNAL_PORT:-3000}:${INTERNAL_PORT:-3000}"
