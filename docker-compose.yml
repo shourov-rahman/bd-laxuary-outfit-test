@@ -6,7 +6,7 @@ services:
     container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
-      - "${PORT:-3000}:3000"
+      - ${PORT:-3000}:3000
     env_file:
       - .env
     environment:
@@ -15,8 +15,19 @@ services:
       - PORT=3000
       - HOSTNAME=0.0.0.0
     networks:
-      - app-network
-
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.rule=Host(`shourov.xyz`)
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.entrypoints=web
+      - traefik.http.services.bd-laxuary-outfit-4wjzsb-1-web.loadbalancer.server.port=3000
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.service=bd-laxuary-outfit-4wjzsb-1-web
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.middlewares=redirect-to-https@file
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.rule=Host(`shourov.xyz`)
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.entrypoints=websecure
+      - traefik.http.services.bd-laxuary-outfit-4wjzsb-1-websecure.loadbalancer.server.port=3000
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.service=bd-laxuary-outfit-4wjzsb-1-websecure
+      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.tls.certresolver=letsencrypt
 networks:
-  app-network:
-    driver: bridge
+  dokploy-network:
+    external: true
