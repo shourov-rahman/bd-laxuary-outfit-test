@@ -5,13 +5,13 @@ services:
       target: runner
     restart: unless-stopped
     ports:
-      - "${PROD_EXTERNAL_PORT:-3000}:${INTERNAL_PORT:-3000}"
+      - 3000
     env_file:
       - .env
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-      - PORT=${INTERNAL_PORT}
+      - PORT=3000
       - HOSTNAME=0.0.0.0
     networks:
       - app-network
