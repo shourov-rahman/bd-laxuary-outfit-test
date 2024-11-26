@@ -16,18 +16,7 @@ services:
       - HOSTNAME=0.0.0.0
     networks:
       - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.rule=Host(`shourov.xyz`)
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.entrypoints=web
-      - traefik.http.services.bd-laxuary-outfit-4wjzsb-1-web.loadbalancer.server.port=3000
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.service=bd-laxuary-outfit-4wjzsb-1-web
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-web.middlewares=redirect-to-https@file
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.rule=Host(`shourov.xyz`)
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.entrypoints=websecure
-      - traefik.http.services.bd-laxuary-outfit-4wjzsb-1-websecure.loadbalancer.server.port=3000
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.service=bd-laxuary-outfit-4wjzsb-1-websecure
-      - traefik.http.routers.bd-laxuary-outfit-4wjzsb-1-websecure.tls.certresolver=letsencrypt
+
 networks:
   dokploy-network:
     external: true
