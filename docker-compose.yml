@@ -16,16 +16,7 @@ services:
       - HOSTNAME=0.0.0.0
     networks:
       - app-network
-      - dokploy-network
-    labels:
-      - traefik.enable=true
-      - traefik.http.routers.next-app.rule=Host(`shourov.xyz`)
-      - traefik.http.routers.next-app.entrypoints=websecure
-      - traefik.http.routers.next-app.tls.certResolver=letsencrypt
-      - traefik.http.services.next-app.loadbalancer.server.port=3000
-
+    
 networks:
   app-network:
     driver: bridge
-  dokploy-network:
-    external: true
