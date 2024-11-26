@@ -6,17 +6,26 @@ services:
     container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
-      - "${PORT:-3001}:3001"
+      - "${PROD_EXTERNAL_PORT:-3001}:${INTERNAL_PORT:-3000}"
     env_file:
       - .env
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-      - PORT=3001
+      - PORT=${INTERNAL_PORT}
       - HOSTNAME=0.0.0.0
     networks:
       - app-network
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.next-app.rule=Host(`shourov.xyz`)
+      - traefik.http.routers.next-app.entrypoints=websecure
+      - traefik.http.routers.next-app.tls.certResolver=letsencrypt
+      - traefik.http.services.next-app.loadbalancer.server.port=3000
 
 networks:
   app-network:
     driver: bridge
+  dokploy-network:
+    external: true

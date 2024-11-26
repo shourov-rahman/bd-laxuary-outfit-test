@@ -39,6 +39,7 @@ RUN chown -R node:node /app
 USER node
 
 
-EXPOSE 3001
+# Expose the internal port
+EXPOSE ${INTERNAL_PORT}
 
 CMD ["node", "server.js"]
