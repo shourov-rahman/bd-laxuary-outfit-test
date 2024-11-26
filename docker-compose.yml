@@ -6,13 +6,13 @@ services:
     container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
-      - "${PORT:-3000}:3000"
+      - "${PORT:-3001}:3001"
     env_file:
       - .env
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-      - PORT=3000
+      - PORT=3001
       - HOSTNAME=0.0.0.0
     networks:
       - app-network
