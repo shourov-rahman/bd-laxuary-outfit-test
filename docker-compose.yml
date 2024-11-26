@@ -3,9 +3,10 @@ services:
     build:
       context: .
       target: runner
+    container_name: bd-laxuary-outfit
     restart: unless-stopped
     ports:
-      - 3000
+      - "${PORT:-3000}:3000"
     env_file:
       - .env
     environment:
@@ -15,7 +16,7 @@ services:
       - HOSTNAME=0.0.0.0
     networks:
       - app-network
-    
+
 networks:
   app-network:
     driver: bridge

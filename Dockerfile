@@ -38,8 +38,7 @@ RUN chown -R node:node /app
 # Switch to the non-root user
 USER node
 
-
 # Expose the internal port
-EXPOSE ${INTERNAL_PORT}
+EXPOSE 3000
 
 CMD ["node", "server.js"]
